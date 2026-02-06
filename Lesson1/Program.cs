@@ -28,6 +28,17 @@ class Program
             Console.Write(nr + " ");
         }
         Console.Write("};");
+        Console.WriteLine();
+        
+        // #4
+        char[] symbols = { 'c', 's', 'h', 'a', 'r', 'p' };
+        int[] charToint = GetInteger(symbols);
+        Console.Write("{ ");
+        foreach (var ints in charToint)
+        {
+            Console.Write(ints + " ");
+        }
+        Console.Write("};");
     }
     static int Factorial(int n)
     {
@@ -64,5 +75,15 @@ class Program
             }
             return newArray;
         }
+    }
+
+    static int[] GetInteger(char[] symbol)
+    {
+        int[] ints = new int[symbol.Length];
+        for (int i = 0; i < symbol.Length; i++)
+        {
+            ints[i] = symbol[i];
+        }
+        return ints;
     }
 }
