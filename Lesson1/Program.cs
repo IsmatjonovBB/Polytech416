@@ -55,6 +55,17 @@ class Program
         };
         int max = MaxValue(massive);
         Console.WriteLine($"Max: {max}");
+        
+        // #7
+        char[] charArray = { 'B', 'a', 'k', 'h', 't', 'o', 'v', 'a', 'r' };
+        char[] sortedChar = SortChars(charArray);
+        Console.Write("{ ");
+        foreach (var c in sortedChar)
+        {
+            Console.Write(c + " ");
+        }
+        Console.Write("};");
+        Console.WriteLine();
     }
     static int Factorial(int n)
     {
@@ -131,5 +142,15 @@ class Program
             }
         }
         return max;
+    }
+
+    static char[] SortChars(char[] array)
+    {
+        char[] result = new char[array.Length];
+        for (int i = 0; i < array.Length; i++)
+        {
+            result[i] = array[array.Length - 1 - i];
+        }
+        return result;
     }
 }
