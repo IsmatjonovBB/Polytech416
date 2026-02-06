@@ -66,6 +66,25 @@ class Program
         }
         Console.Write("};");
         Console.WriteLine();
+        
+        // #8
+        int[] intArray = MyMethod(2, 4);
+        Console.Write("{ ");
+        foreach (int arr in intArray)
+        {
+            Console.Write(arr + " ");
+        }
+        Console.Write("};");
+        Console.WriteLine();
+        
+        char[] CharArray = MyMethod('A', 'Z');
+        Console.Write("{ ");
+        foreach (char arr in CharArray)
+        {
+            Console.Write(arr + " ");
+        }
+        Console.Write("};");
+        Console.WriteLine();
     }
     static int Factorial(int n)
     {
@@ -150,6 +169,34 @@ class Program
         for (int i = 0; i < array.Length; i++)
         {
             result[i] = array[array.Length - 1 - i];
+        }
+        return result;
+    }
+
+    static int[] MyMethod(int x, int y)
+    {
+        int[] result = new int[y - 1];
+        for (int i = 0, j = x; i < y - 1; i++)
+        {
+            result[i] = j;
+            j++;
+        }
+        return result;
+    }
+
+    static char[] MyMethod(char x, char y)
+    {
+        int arrLen = y - x;
+        int[] chatToIntArray = new int[arrLen + 1];
+        for (int i = 0; i <= arrLen; i++)
+        {
+            chatToIntArray[i] = x;
+            x++;
+        }
+        char[] result = new char[chatToIntArray.Length];
+        for (int i = 0; i < chatToIntArray.Length; i++)
+        {
+            result[i] = (char)chatToIntArray[i];
         }
         return result;
     }
