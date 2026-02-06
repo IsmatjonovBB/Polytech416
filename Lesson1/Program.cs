@@ -85,6 +85,16 @@ class Program
         }
         Console.Write("};");
         Console.WriteLine();
+        
+        // #9
+        int[] Method9 = MaxAndMin(3, 8, 0, 4, 9);
+        Console.Write("{ ");
+        foreach (int arr in Method9)
+        {
+            Console.Write(arr + " ");
+        }
+        Console.Write("};");
+        Console.WriteLine();
     }
     static int Factorial(int n)
     {
@@ -199,5 +209,26 @@ class Program
             result[i] = (char)chatToIntArray[i];
         }
         return result;
+    }
+
+    static int[] MaxAndMin(params int[] numbers)
+    {
+        int[] massive = numbers;
+        int max = 0;
+        int min = 0;
+        for (int i = 0; i < massive.Length; i++)
+        {
+            if (max < massive[i])
+            {
+                max = massive[i];
+            }
+
+            if (min > massive[i])
+            {
+                min = massive[i];
+            }
+        }
+        int[] resultArray = { min, max};
+        return resultArray;
     }
 }
