@@ -1,4 +1,6 @@
-﻿namespace Lesson1;
+﻿using System.Xml;
+
+namespace Lesson1;
 
 class Program
 {
@@ -16,6 +18,16 @@ class Program
         int a = 4;
         result = Square(a);
         Console.WriteLine($"Result: {result}");
+        
+        // #3
+        int[] array = { 1, 2, 3, 4, 5 };
+        int[] newArray = GetArray(array, 2);
+        Console.Write("{ ");
+        foreach (var nr in newArray)
+        {
+            Console.Write(nr + " ");
+        }
+        Console.Write("};");
     }
     static int Factorial(int n)
     {
@@ -34,5 +46,23 @@ class Program
             summa += i * i;
         }
         return summa;
+    }
+
+    static int[] GetArray(int[] array, int n)
+    {
+        if (array.Length < n)
+        {
+            return array;
+        }
+        else
+        {
+            int[] newArray = new int[array.Length - n];
+            for (int i = n, j = 0; j < array.Length - n; i++)
+            {
+                newArray[j] = array[i];
+                j++;
+            }
+            return newArray;
+        }
     }
 }

@@ -12,3 +12,4 @@ C:\Users\HOME\RiderProjects\Polytech416\Lesson1\obj\Debug\net9.0\refint\Lesson1.
 C:\Users\HOME\RiderProjects\Polytech416\Lesson1\obj\Debug\net9.0\Lesson1.pdb
 C:\Users\HOME\RiderProjects\Polytech416\Lesson1\obj\Debug\net9.0\Lesson1.genruntimeconfig.cache
 C:\Users\HOME\RiderProjects\Polytech416\Lesson1\obj\Debug\net9.0\ref\Lesson1.dll
+C:\Users\HOME\RiderProjects\Polytech416\Lesson1\obj\Debug\net9.0\Lesson1.sourcelink.json
