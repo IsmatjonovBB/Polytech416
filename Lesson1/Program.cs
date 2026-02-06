@@ -39,6 +39,12 @@ class Program
             Console.Write(ints + " ");
         }
         Console.Write("};");
+        Console.WriteLine();
+        
+        // #5
+        int[] numbers = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+        int average = GetAverage(numbers);
+        Console.WriteLine($"Average: {average}");
     }
     static int Factorial(int n)
     {
@@ -85,5 +91,15 @@ class Program
             ints[i] = symbol[i];
         }
         return ints;
+    }
+
+    static int GetAverage(int[] intArray)
+    {
+        int result = 0;
+        for (int i = 0; i < intArray.Length; i++)
+        {
+            result += intArray[i];
+        }
+        return result / intArray.Length;
     }
 }
