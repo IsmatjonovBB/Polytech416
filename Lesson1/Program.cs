@@ -13,11 +13,13 @@ class Program
         n = 5;
         result = Factorial(n);
         Console.WriteLine($"{n}!! = {result}");
+        Console.WriteLine("------------");
         
         // #2
         int a = 4;
         result = Square(a);
         Console.WriteLine($"Result: {result}");
+        Console.WriteLine("------------");
         
         // #3
         int[] array = { 1, 2, 3, 4, 5 };
@@ -29,6 +31,7 @@ class Program
         }
         Console.Write("};");
         Console.WriteLine();
+        Console.WriteLine("------------");
         
         // #4
         char[] symbols = { 'c', 's', 'h', 'a', 'r', 'p' };
@@ -40,11 +43,13 @@ class Program
         }
         Console.Write("};");
         Console.WriteLine();
+        Console.WriteLine("------------");
         
         // #5
         int[] numbers = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
         int average = GetAverage(numbers);
         Console.WriteLine($"Average: {average}");
+        Console.WriteLine("------------");
         
         // #6
         int[,] massive =
@@ -55,6 +60,7 @@ class Program
         };
         int max = MaxValue(massive);
         Console.WriteLine($"Max: {max}");
+        Console.WriteLine("------------");
         
         // #7
         char[] charArray = { 'B', 'a', 'k', 'h', 't', 'o', 'v', 'a', 'r' };
@@ -66,6 +72,7 @@ class Program
         }
         Console.Write("};");
         Console.WriteLine();
+        Console.WriteLine("------------");
         
         // #8
         int[] intArray = MyMethod(2, 4);
@@ -85,6 +92,7 @@ class Program
         }
         Console.Write("};");
         Console.WriteLine();
+        Console.WriteLine("------------");
         
         // #9
         int[] Method9 = MaxAndMin(3, 8, 0, 4, 9);
@@ -95,6 +103,12 @@ class Program
         }
         Console.Write("};");
         Console.WriteLine();
+        Console.WriteLine("------------");
+        
+        // #10
+        string text = "Hello ";
+        string newText = CreateText(text, 'H', 'o', 'r', 'l', 'd', '!');
+        Console.WriteLine(newText);
     }
     static int Factorial(int n)
     {
@@ -230,5 +244,15 @@ class Program
         }
         int[] resultArray = { min, max};
         return resultArray;
+    }
+
+    static string CreateText(string text, params char[] symbols)
+    {
+        string result = "";
+        for (int i = 0; i < symbols.Length; i++)
+        {
+            result += symbols[i];
+        }
+        return text + result;
     }
 }
