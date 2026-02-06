@@ -45,6 +45,16 @@ class Program
         int[] numbers = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
         int average = GetAverage(numbers);
         Console.WriteLine($"Average: {average}");
+        
+        // #6
+        int[,] massive =
+        {
+            { 5, 9, 1 },
+            { 3, 6, 7 },
+            { 2, 5, 8 }
+        };
+        int max = MaxValue(massive);
+        Console.WriteLine($"Max: {max}");
     }
     static int Factorial(int n)
     {
@@ -101,5 +111,25 @@ class Program
             result += intArray[i];
         }
         return result / intArray.Length;
+    }
+
+    static int MaxValue(int[,] intArray)
+    {
+        int max = intArray[0, 0];
+        int a = 0;
+        int b = 0;
+        for (int i = 0; i < intArray.GetLength(0); i++)
+        {
+            for (int j = 0; j < intArray.GetLength(1); j++)
+            {
+                if (max < intArray[i, j])
+                {
+                    max = intArray[i, j];
+                    a = i;
+                    b = j;
+                }
+            }
+        }
+        return max;
     }
 }
