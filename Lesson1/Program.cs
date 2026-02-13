@@ -46,7 +46,7 @@ class Program
         Console.WriteLine("------------");
         
         // #5
-        int[] numbers = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+        int[] numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
         int average = GetAverage(numbers);
         Console.WriteLine($"Average: {average}");
         Console.WriteLine("------------");
@@ -63,14 +63,13 @@ class Program
         Console.WriteLine("------------");
         
         // #7
-        char[] charArray = { 'B', 'a', 'k', 'h', 't', 'o', 'v', 'a', 'r' };
-        char[] sortedChar = SortChars(charArray);
+        char[] charArray = ['H', 'e', 'l', 'l', 'o'];
         Console.Write("{ ");
-        foreach (var c in sortedChar)
+        foreach (char myChar in SortChars(charArray))
         {
-            Console.Write(c + " ");
+            Console.Write(myChar + " ");
         }
-        Console.Write("};");
+        Console.Write("}");
         Console.WriteLine();
         Console.WriteLine("------------");
         
@@ -189,12 +188,14 @@ class Program
 
     static char[] SortChars(char[] array)
     {
-        char[] result = new char[array.Length];
-        for (int i = 0; i < array.Length; i++)
+        int arrayLength = array.Length;
+        for (int i = 0; i < arrayLength / 2; i++)
         {
-            result[i] = array[array.Length - 1 - i];
+            char temp = array[i];
+            array[i] = array[arrayLength - 1 - i];
+            array[arrayLength - 1 - i] = temp;
         }
-        return result;
+        return array;
     }
 
     static int[] MyMethod(int x, int y)
